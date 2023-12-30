@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Nav from './Navbar/Nav'
+import Home from './Navbar/component/Home'
+import About from './Navbar/component/About'
+import Catagory from './Navbar/component/Catagory'
+import News from './Navbar/component/News'
+import SignUp from './Navbar/component/SignUp'
+import { Route, Routes } from 'react-router-dom'
+import Comp1 from './Navbar/component/NestCom/Comp1'
+import Comp2 from './Navbar/component/NestCom/Comp2'
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <div>
+        <Routes>
+    
+        <Route path = '' element = { <Nav />} >
+        <Route path = 'home' element = { <Home />} />  
+        <Route path = 'about' element = { <About />} />  
 
-export default App;
+        <Route path = 'catagory' element = { <Catagory />} > 
+        <Route path='/catagory/comp1' element = { <Comp1 />} />
+        <Route path='/catagory/comp2' element = { <Comp2 />} />
+        </Route>
+
+        <Route path = 'news' element = { <News />} /> 
+        <Route path = 'signup' element = { <SignUp />} /> 
+        
+
+        </ Route>
+    
+        </Routes>
+
+ 
+        
+    </div>
+  )
+}

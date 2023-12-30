@@ -1,0 +1,19 @@
+ .dropDown{
+    background-color: white;
+    border: 0.5px solid gray;
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+/* .myCat:visited ~ .dropDown{
+    display: block;
+} */
+
+.dropDown h4{
+    color: black;
+    text-decoration: underline;
+    position:  relative;
+    top: 15%;
+    cursor: pointer;
+}
